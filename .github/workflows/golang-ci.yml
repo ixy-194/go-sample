@@ -1,0 +1,26 @@
+# ワークフローの名前
+name: Go CI
+
+# トリガーになる Github イベント
+#　今回は、リポジトリへのコミットと PR 作成をトリガーにします
+on:
+  push:
+  pull_request:
+
+# ジョブ定義
+jobs:
+  # ジョブ名
+  unit-test:
+    # ジョブの実行環境の指定
+    runs-on: ubuntu-latest
+    # ジョブ内で実行する step を定義
+    steps:
+      # リポジトリからソースコードの取得
+      - uses: actions/checkout@v4
+      # Go の実行環境の Set up
+      - uses: actions/setup-go@v5
+        with:
+          go-version: ^1.20
+      # テストの実行
+      - name: Run Test
+        run: go test -v ./...
