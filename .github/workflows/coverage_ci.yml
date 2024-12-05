@@ -6,7 +6,6 @@ on:
     types:
       - opened        
       - synchronize   
-
 # ジョブ定義
 jobs:
   # ジョブ名
@@ -24,17 +23,23 @@ jobs:
       # テストの実行
       - name: Make Coverage
         run: make coverage
-      - name: 
-        uses: peter-evans/create-or-update-comment@v3
-      # テストカバレッジを書き込み
+        - name: Find existing comment
+        id: find_comment
+        uses: peter-evans/find-comment@v2
+        with:
+          issue-number: ${{ github.event.number }}
+          body-includes: "## Test Coverage Report"
+      - name: Delete existing comment
+        if: steps.find_comment.outputs.comment-id
+        run: |
+          curl \
+            -X DELETE \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/issues/comments/${{ steps.find_comment.outputs.comment-id }}"
       - name: Comment coverage on PR
         uses: peter-evans/create-or-update-comment@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{github.event.number}}
-          reactions: '+1'
+          issue-number: ${{ github.event.number }}
           body-path: 'coverage.txt'
-        
-
-        
-
