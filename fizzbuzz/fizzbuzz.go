@@ -1,10 +1,10 @@
-package main
+package fizzbuzz
 
 import (
 	"fmt"
 )
 
-func fizzBuzz(n int) string {
+func FizzBuzz(n int) string {
 	switch {
 	case n%3 == 0 && n%5 == 0:
 		return "FizzBuzz"
