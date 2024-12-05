@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func FizzBuzz(n int) string {
+func fizzBuzz(n int) string {
 	switch {
 	case n%3 == 0 && n%5 == 0:
 		return "FizzBuzz"
