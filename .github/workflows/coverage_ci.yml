@@ -23,7 +23,7 @@ jobs:
       # テストの実行
       - name: Make Coverage
         run: make coverage
-        - name: Find existing comment
+      - name: Find existing comment
         id: find_comment
         uses: peter-evans/find-comment@v2
         with:
