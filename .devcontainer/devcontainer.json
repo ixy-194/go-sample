@@ -1,0 +1,8 @@
+{
+  "name": "Go Development Container",
+  "image": "mcr.microsoft.com/vscode/devcontainers/go:latest",
+  "postCreateCommand": "go mod tidy",
+  "forwardPorts": [],
+  "mounts": [],
+  "remoteUser": "vscode"
+}
