@@ -11,9 +11,6 @@ import (
 // - 上記のいずれにも該当しない場合は、n をそのまま文字列に変換して返します。
 func FizzBuzz(n int) string {
 	switch {
-	// - n が 3 と 5 の両方で割り切れる場合は "FizzBuzz" を返します。
-	case n%3 == 0 && n%5 == 0:
-		return "FizzBuzz"
 	// - n が 3 で割り切れる場合は "Fizz" を返します。
 	case n%3 == 0:
 		return "Fizz"
