@@ -25,3 +25,6 @@ func FizzBuzz(n int) string {
 		return fmt.Sprintf("%d", n)
 	}
 }
+func linter() {
+	return
+}
