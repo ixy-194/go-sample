@@ -19,7 +19,9 @@ func FizzBuzz(n int) string {
 	// - n が 5 で割り切れる場合は "Buzz" を返します。
 	case n%5 == 0:
 		return "Buzz"
-	// - 上記のいずれにも該当しない場合は、n をそのまま文字列に変換して返します。
+	case n%20 == 0:
+		return "Special"
+		// - 上記のいずれにも該当しない場合は、n をそのまま文字列に変換して返します。
 	default:
 		return fmt.Sprintf("%d", n)
 	}
