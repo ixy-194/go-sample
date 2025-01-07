@@ -6,25 +6,23 @@ import (
 )
 
 // テストの定義
-func TestFizzBuzz(t *testing.T) {
-	// テストケースの定義。input が入力値、expected が期待される出力です。
-	tests := []struct {
-		input    int
-		expected string
-	}{
-		{1, "1"},         // 1を入力した場合、出力は "1"
-		{3, "Fizz"},      // 3を入力した場合、出力は "Fizz"
-		{5, "Buzz"},      // 5を入力した場合、出力は "Buzz"
+func Test_1を入力したら1が返ってくること(t *testing.T) {
+	result := fizzbuzz.FizzBuzz(1)
+	if result != "1" {
+		t.Errorf("FizzBuzz(1) = %s; want 1", result)
 	}
+}
 
-	// 各テストケースをループで回します。
-	for _, test := range tests {
-		// fizzbuzz パッケージの FizzBuzz 関数を呼び出し、結果を result に格納します。
-		result := fizzbuzz.FizzBuzz(test.input)
+func Test_3を入力したらFizzが返ってくること(t *testing.T) {
+	result := fizzbuzz.FizzBuzz(3)
+	if result != "Fizz" {
+		t.Errorf("FizzBuzz(3) = %s; want Fizz", result)
+	}
+}
 
-		// 結果が期待される出力と異なる場合、エラーメッセージを表示します。
-		if result != test.expected {
-			t.Errorf("FizzBuzz(%d) = %s; want %s", test.input, result, test.expected)
-		}
+func Test_5を入力したらBuzzが返ってくること(t *testing.T) {
+	result := fizzbuzz.FizzBuzz(5)
+	if result != "Buzz" {
+		t.Errorf("FizzBuzz(5) = %s; want Buzz", result)
 	}
 }
