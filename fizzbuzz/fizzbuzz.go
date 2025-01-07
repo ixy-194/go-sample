@@ -20,7 +20,7 @@ func FizzBuzz(n int) string {
 	case n%5 == 0:
 		return "Buzz"
 	case n%20 == 0:
-		return "Special"
+		return "Specl"
 		// - 上記のいずれにも該当しない場合は、n をそのまま文字列に変換して返します。
 	default:
 		return fmt.Sprintf("%d", n)
