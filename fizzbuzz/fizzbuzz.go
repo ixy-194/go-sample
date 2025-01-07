@@ -9,6 +9,7 @@ import (
 // - n が 5 で割り切れる場合は "Buzz" を返します。
 // - 上記のいずれにも該当しない場合は、n をそのまま文字列に変換して返します。
 func FizzBuzz(n int) string {
+
 	switch {
 	// - n が 3 で割り切れる場合は "Fizz" を返します。
 	case n%3 == 0:
@@ -20,4 +21,5 @@ func FizzBuzz(n int) string {
 	default:
 		return fmt.Sprintf("%d", n)
 	}
+
 }
