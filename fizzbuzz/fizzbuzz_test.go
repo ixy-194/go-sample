@@ -26,3 +26,8 @@ func Test_5を入力したらBuzzが返ってくること(t *testing.T) {
 		t.Errorf("FizzBuzz(5) = %s; want Buzz", result)
 	}
 }
+
+func Test_15入力したらFIzzBuzzくること(t *testing.T) {
+	fizzbuzz.FizzBuzz(15)
+
+}
