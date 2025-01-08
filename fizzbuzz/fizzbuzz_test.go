@@ -29,7 +29,7 @@ func Test_5を入力したらBuzzが返ってくること(t *testing.T) {
 
 func Test_15を入力したらFizzBuzzが返ってくること(t *testing.T) {
 	result := fizzbuzz.FizzBuzz(15)
-	if result != "FizzBuzz" {
+	if result != "aaaa" {
 		t.Errorf("FizzBuzz(15) = %s; want FizzBuzz", result)
 	}
 }
